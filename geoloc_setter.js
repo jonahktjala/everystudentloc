@@ -1,3 +1,8 @@
+var STRING_AFRICA = "Africa";
+var STRING_FRANCE = "France"
+var african_contact = "https://www.questions2vie.com/contactAF1.html";
+var french_contact = "https://www.questions2vie.com/contactFR.html";
+var af2_contact = "https://www.questions2vie.com/contactAF2.html";
 
 function ipLookUp () {
   $.ajax('http://ip-api.com/json')
@@ -7,12 +12,12 @@ function ipLookUp () {
           console.log('User\'s Country', response.country);
           console.log('User\'s Continent', response.timezone);
           var timezone = response.timezone;
-          if(timezone.includes("Africa")){
-            window.location.replace("https://www.questions2vie.com/contactAF1.html");
-          }else if(timezone.includes("France")){
-            window.location.replace("https://www.questions2vie.com/contactFR.html");
+          if(timezone.includes(STRING_AFRICA)){
+            window.location.replace(african_contact);
+          }else if(timezone.includes(STRING_FRANCE)){
+            window.location.replace(french_contact);
           }else{
-            window.location.replace("https://www.questions2vie.com/contactAF2.html");
+            window.location.replace(af2_contact);
           }
       },
       function fail(data, status) {
