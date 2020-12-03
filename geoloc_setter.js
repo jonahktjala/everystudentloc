@@ -2,7 +2,6 @@ var STRING_AFRICA = "Africa";
 var STRING_FRANCE = "France"
 var african_contact = "https://www.questions2vie.com/contactAF1.html";
 var french_contact = "https://www.questions2vie.com/contactFR.html";
-var af2_contact = "https://www.questions2vie.com/contactAF2.html";
 
 function ipLookUp () {
   $.ajax('http://ip-api.com/json')
@@ -14,10 +13,8 @@ function ipLookUp () {
           var timezone = response.timezone;
           if(timezone.includes(STRING_AFRICA)){
             window.location.replace(african_contact);
-          }else if(timezone.includes(STRING_FRANCE)){
-            window.location.replace(french_contact);
           }else{
-            window.location.replace(af2_contact);
+            window.location.replace(french_contact);
           }
       },
       function fail(data, status) {
